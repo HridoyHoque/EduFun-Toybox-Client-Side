@@ -7,11 +7,11 @@ const Navbar = () => {
                 <Link> <h2 className="text-4xl text-cyan-500">EduFun <span className="text-black">Toybox</span></h2></Link>
             </div>
             <div className="gap-6 mr-44">
-               <h2 className="text-2xl">Home</h2>
+              <Link to='/'><h2 className="text-2xl">Home</h2></Link>
                 <h2 className="text-2xl">AllToys</h2>
                 <h2 className="text-2xl">MyToys</h2>
                 <h2 className="text-2xl">AddToy</h2>
-                <h2 className="text-2xl">Blogs</h2>
+                <Link to="blogs"><h2 className="text-2xl">Blogs</h2></Link>
                </div>
             <div className="flex-none">
                 <div className="avatar">
