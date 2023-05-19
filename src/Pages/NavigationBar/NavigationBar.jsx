@@ -1,10 +1,9 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const NavigationBar = () => {
     const {user, LogOut} = useContext(AuthContext)
-
 const handleLogout = () => {
     LogOut()
     .then(() => {})
@@ -16,8 +15,9 @@ const handleLogout = () => {
         <li className="text-2xl"><Link>AllToys</Link></li>
         <li className="text-2xl"><Link>AddToy</Link></li>
         <li className="text-2xl"><Link>MyToys</Link></li>
-        <li className="text-2xl"><Link to='/login'>login</Link></li>
-        {user && <button onClick={handleLogout} className="btn">Logout</button>}
+       
+        {user 
+        ? <button onClick={handleLogout} className="btn">Logout</button> :  <li className="text-2xl"><Link to='/login'>login</Link></li>}
     </>
     return (
         <div className="navbar bg-base-100">
