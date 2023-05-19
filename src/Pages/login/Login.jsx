@@ -46,6 +46,16 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            toast.success('Success! You have been logged in by Google.', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
         })
         .catch(error => {
             console.log(error);

@@ -1,9 +1,11 @@
-// import Banner from "../Banner/Banner";
+import Banner from "../Banner/Banner";
+import GallerySection from "../GallarySection/GallerySection";
 
 const Home = () => {
     return (
         <>
-           {/* <Banner></Banner> */}
+        <Banner></Banner>
+           <GallerySection></GallerySection>
         </>
     );
 };
