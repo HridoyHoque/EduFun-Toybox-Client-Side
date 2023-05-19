@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-base-100 container mx-auto">
+        <div className="navbar bg-base-100">
             <div className="flex-1">
                 <Link> <h2 className="text-4xl text-cyan-500">EduFun <span className="text-black">Toybox</span></h2></Link>
             </div>
@@ -12,6 +12,7 @@ const Navbar = () => {
                 <h2 className="text-2xl">AllToys</h2>
                 <h2 className="text-2xl">AddToy</h2>
                 <h2 className="text-2xl">MyToys</h2>
+                <Link to='/login'><button className="btn btn-info text-2xl">Login</button></Link>
                </div>
             <div className="flex-none">
                 <div className="avatar">
