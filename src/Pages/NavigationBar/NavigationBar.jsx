@@ -13,7 +13,7 @@ const handleLogout = () => {
     const NavItems = <>
         <li className="text-2xl"><Link to='/'>Home</Link></li>
         <li className="text-2xl"><Link to='/blog'>Blogs</Link></li>
-        <li className="text-2xl"><Link>AllToys</Link></li>
+        <li className="text-2xl"><Link to='/allToys'>AllToys</Link></li>
         <li className="text-2xl"><Link to='/addToys'>AddToy</Link></li>
         <li className="text-2xl"><Link>MyToys</Link></li>
        
@@ -41,7 +41,7 @@ const handleLogout = () => {
             <div className="navbar-end">
                 <div className="avatar">
                     <div className="w-16 h-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src="https://i.ibb.co/wpk7Lpt/admin.jpg" />
+                        <img src="https://i.ibb.co/4pJT6D2/profile-pic-1.png" />
                     </div>
                 </div>
             </div>

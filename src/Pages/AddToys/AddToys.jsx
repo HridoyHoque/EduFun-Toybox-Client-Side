@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const AddToys = () => {
+    const { user } = useContext(AuthContext)
 
     const handleAddToys = event => {
         event.preventDefault();
@@ -16,7 +19,7 @@ const AddToys = () => {
         const quantity = form.quantity.value;
         const details = form.details.value;
 
-        const newToy = {name, photo, category, price, rating, quantity, details, sellerName, email}
+        const newToy = { name, photo, category, price, rating, quantity, details, sellerName, email }
 
         // send data to the server
         fetch("http://localhost:5000/toys", {
@@ -26,161 +29,82 @@ const AddToys = () => {
             },
             body: JSON.stringify(newToy)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Toy Added Successfully!',
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                  })
-            }
-        })
-       
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy Added Successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                }
+            })
+
     }
     return (
-        <form onSubmit={handleAddToys} className="max-w-lg mx-auto mt-8 p-6 bg-white rounded-lg shadow-md mb-4">
-            <h2 className="text-2xl font-bold text-center mb-6">Add New Toy</h2>
-            <div className="mb-4">
-                <label htmlFor="pictureUrl" className="text-lg font-medium">
-                    Picture URL:
-                </label>
-                <input
-                    type="text"
-                    id="pictureUrl"
-                    name="photo"
-                    placeholder="Toy photo"
-
-                    required
-                    className="w-full border border-gray-300 rounded-lg py-2 px-4 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="toyName" className="text-lg font-medium">
-                    Toy Name:
-                </label>
-                <input
-                    type="text"
-                    id="toyName"
-                    name="name"
-                    placeholder="Toy Name"
-
-
-                    required
-                    className="w-full border border-gray-300 rounded-lg py-2 px-4 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="subCategory" className="text-lg font-medium">
-                    Sub-category:
-                </label>
-                <input
-                    type="text"
-                    id="subCategory"
-                    name="category"
-                    placeholder="Toy category"
-
-
-                    required
-                    className="w-full border border-gray-300 rounded-lg py-2 px-4 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="price" className="text-lg font-medium">
-                    Price:
-                </label>
-                <input
-                    type="number"
-                    id="price"
-                    name="price"
-                    placeholder="Toy Price"
-
-
-                    required
-                    className="w-full border border-gray-300 rounded-lg py-2 px-4 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="rating" className="text-lg font-medium">
-                    Rating:
-                </label>
-                <input
-                    type="number"
-                    id="rating"
-                    name="rating"
-                    placeholder="Toy rating"
-
-
-                    required
-                    className="w-full border border-gray-300 rounded-lg py-2 px-4 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="quantity" className="text-lg font-medium">
-                    Seller Name:
-                </label>
-                <input
-                    type="text"
-                    id="quantity"
-                    name="sellerName"
-                    placeholder="Seller Name"
-
-                    required
-                    className="w-full border border-gray-300 rounded-lg py-2 px-4 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="quantity" className="text-lg font-medium">
-                    Seller Email:
-                </label>
-                <input
-                    type="email"
-                    id="quantity"
-                    name="email"
-                    placeholder="Seller Email"
-
-
-                    required
-                    className="w-full border border-gray-300 rounded-lg py-2 px-4 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="quantity" className="text-lg font-medium">
-                    Available Quantity:
-                </label>
-                <input
-                    type="number"
-                    id="quantity"
-                    name="quantity"
-                    placeholder="Available Quantity"
-
-
-                    required
-                    className="w-full border border-gray-300 rounded-lg py-2 px-4 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-            </div>
-            <div className="mb-4">
-                <label htmlFor="description" className="text-lg font-medium">
-                    Detail Description:
-                </label>
-                <input
-                    id="description"
-                    type="text"
-                    name="details"
-                    placeholder="Toy details"
-                    required
-                    className="w-full border border-gray-300 rounded-lg py-2 px-4 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                ></input>
-            </div>
-            <button
-                type="submit"
-                className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300"
-            >
-                Add Toy
-            </button>
-        </form>
+        <form onSubmit={handleAddToys}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Seller Name</span>
+                        </label>
+                        <input type="text" defaultValue={user?.displayName} name="sellerName" className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">photo URL</span>
+                        </label>
+                        <input type="text" name="photo" placeholder='Toy Photo' className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Toy Name</span>
+                        </label>
+                        <input type="text" name='name' placeholder='Toy Name' className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">price</span>
+                        </label>
+                        <input type="text" name='price' placeholder='Price' className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">category</span>
+                        </label>
+                        <input type="text" name='category' placeholder='Toy Category' className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Ratings</span>
+                        </label>
+                        <input type="text" name='rating' placeholder='Ratings' className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Available Quantity</span>
+                        </label>
+                        <input type="text" name='quantity' placeholder='Available Quantity' className="input input-bordered" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Details</span>
+                        </label>
+                        <input type="text" name='details' placeholder='Toy Details' className="input input-bordered" />
+                    </div>
+                </div>
+                <div className="form-control mt-6">
+                    <input className="btn btn-primary btn-block" type="submit" value="Order Confirm" />
+                </div>
+            </form>
     );
 };
 
