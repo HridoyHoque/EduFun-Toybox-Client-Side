@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
       <div>
-        <footer className="footer p-10 bg-base-200 text-base-content">
+        <footer className="footer p-10 bg-gray-200 text-base-content">
   <div className="text-xl">
     <span className="footer-title">Services</span> 
     <a className="link link-hover">Branding</a> 
@@ -24,7 +24,7 @@ const Footer = () => {
     <a className="link link-hover">Cookie policy</a>
   </div>
 </footer> 
-<footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+<footer className="footer px-10 py-4 border-t bg-gray-200 text-base-content border-base-300">
   <div className="items-center grid-flow-col">
     <img src="https://i.ibb.co/7xcxQFR/Toylogo.png" width={130} height={150} alt="" />
     <p><span className="text-cyan-500 text-4xl ">EduFun</span><span className="text-4xl"> Toybox <br /></span><span className="text-2xl">Providing unique educational Toys since 1992</span></p> 

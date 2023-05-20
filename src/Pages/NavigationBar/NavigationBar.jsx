@@ -9,11 +9,12 @@ const handleLogout = () => {
     .then(() => {})
     .catch(error => console.log(error))
 }
+
     const NavItems = <>
         <li className="text-2xl"><Link to='/'>Home</Link></li>
         <li className="text-2xl"><Link to='/blog'>Blogs</Link></li>
         <li className="text-2xl"><Link>AllToys</Link></li>
-        <li className="text-2xl"><Link>AddToy</Link></li>
+        <li className="text-2xl"><Link to='/addToys'>AddToy</Link></li>
         <li className="text-2xl"><Link>MyToys</Link></li>
        
         {user 
