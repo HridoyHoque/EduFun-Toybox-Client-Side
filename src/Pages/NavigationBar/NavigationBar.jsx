@@ -15,7 +15,7 @@ const handleLogout = () => {
         <li className="text-2xl"><Link to='/blog'>Blogs</Link></li>
         <li className="text-2xl"><Link to='/allToys'>AllToys</Link></li>
         <li className="text-2xl"><Link to='/addToys'>AddToy</Link></li>
-        <li className="text-2xl"><Link>MyToys</Link></li>
+        <li className="text-2xl"><Link to='/myToys'>MyToys</Link></li>
        
         {user 
         ? <button onClick={handleLogout} className="btn">Logout</button> :  <li className="text-2xl"><Link to='/login'>login</Link></li>}
