@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const UpdateMyToys = () => {
     const toy = useLoaderData()
-    const {_id, name, price,photo, details, quantity} = toy;
+    const {_id, name, price, photo, details, quantity} = toy;
 
     const handleUpdateToys = event => {
         event.preventDefault();
@@ -12,15 +12,11 @@ const UpdateMyToys = () => {
         const form = event.target;
         const name = form.name.value;
         const photo = form.photo.value;
-        const category = form.category.value;
         const price = form.price.value;
-        const rating = form.rating.value;
-        const sellerName = form.sellerName.value;
-        const email = form.email.value;
         const quantity = form.quantity.value;
         const details = form.details.value;
 
-        const updateToy = { name, photo, category, price, rating, quantity, details, sellerName, email }
+        const updatedToy = { name, photo, price, quantity, details }
 
         // send data to the server
         fetch(`http://localhost:5000/toys/${_id}`, {
@@ -28,12 +24,12 @@ const UpdateMyToys = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(updateToy)
+            body: JSON.stringify(updatedToy)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
                         text: 'Toy Updated Successfully!',
