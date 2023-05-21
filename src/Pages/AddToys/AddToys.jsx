@@ -45,66 +45,66 @@ const AddToys = () => {
     }
     return (
         <form onSubmit={handleAddToys}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Seller Name</span>
-                        </label>
-                        <input type="text" defaultValue={user?.displayName} name="sellerName" className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">photo URL</span>
-                        </label>
-                        <input type="text" name="photo" placeholder='Toy Photo' className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
-                        </label>
-                        <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Toy Name</span>
-                        </label>
-                        <input type="text" name='name' placeholder='Toy Name' className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">price</span>
-                        </label>
-                        <input type="text" name='price' placeholder='Price' className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">category</span>
-                        </label>
-                        <input type="text" name='category' placeholder='Toy Category' className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Ratings</span>
-                        </label>
-                        <input type="text" name='rating' placeholder='Ratings' className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Available Quantity</span>
-                        </label>
-                        <input type="text" name='quantity' placeholder='Available Quantity' className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Details</span>
-                        </label>
-                        <input type="text" name='details' placeholder='Toy Details' className="input input-bordered" />
-                    </div>
-                </div>
-                <div className="form-control mt-6">
-                    <input className="btn btn-primary btn-block" type="submit" value="Order Confirm" />
-                </div>
-            </form>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text">Seller Name</span>
+                </label>
+                <input type="text" defaultValue={user?.displayName} name="sellerName" className="input input-bordered" />
+            </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text">photo URL</span>
+                </label>
+                <input type="text" name="photo" placeholder='Toy Photo' className="input input-bordered" />
+            </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text">Email</span>
+                </label>
+                <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
+            </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text">Toy Name</span>
+                </label>
+                <input type="text" name='name' placeholder='Toy Name' className="input input-bordered" />
+            </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text">price</span>
+                </label>
+                <input type="text" name='price' placeholder='Price' className="input input-bordered" />
+            </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text">category</span>
+                </label>
+                <input type="text" name='category' placeholder='Toy Category' className="input input-bordered" />
+            </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text">Ratings</span>
+                </label>
+                <input type="text" name='rating' placeholder='Ratings' className="input input-bordered" />
+            </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text">Available Quantity</span>
+                </label>
+                <input type="text" name='quantity' placeholder='Available Quantity' className="input input-bordered" />
+            </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text">Details</span>
+                </label>
+                <input type="text" name='details' placeholder='Toy Details' className="input input-bordered" />
+            </div>
+        </div>
+        <div className="form-control mt-6">
+            <input className="btn btn-primary btn-block" type="submit" value="Add Toy" />
+        </div>
+    </form>
     );
 };
 
