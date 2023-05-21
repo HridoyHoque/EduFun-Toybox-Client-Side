@@ -1,14 +1,14 @@
-import { useContext} from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProvider";
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const NavigationBar = () => {
-    const {user, LogOut} = useContext(AuthContext)
-const handleLogout = () => {
-    LogOut()
-    .then(() => {})
-    .catch(error => console.log(error))
-}
+    const { user, LogOut } = useContext(AuthContext)
+    const handleLogout = () => {
+        LogOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
 
     const NavItems = <>
         <li className="text-2xl"><Link to='/'>Home</Link></li>
@@ -16,9 +16,9 @@ const handleLogout = () => {
         <li className="text-2xl"><Link to='/allToys'>AllToys</Link></li>
         <li className="text-2xl"><Link to='/addToys'>AddToy</Link></li>
         <li className="text-2xl"><Link to='/myToys'>MyToys</Link></li>
-       
-        {user 
-        ? <button onClick={handleLogout} className="btn">Logout</button> :  <li className="text-2xl"><Link to='/login'>login</Link></li>}
+
+        {user
+            ? <button onClick={handleLogout} className="btn">Logout</button> : <li className="text-2xl"><Link to='/login'>login</Link></li>}
     </>
     return (
         <div className="navbar bg-base-100">
