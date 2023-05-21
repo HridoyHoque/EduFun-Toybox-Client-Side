@@ -15,10 +15,10 @@ const NavigationBar = () => {
         <li className="text-2xl"><Link to='/blog'>Blogs</Link></li>
         <li className="text-2xl"><Link to='/allToys'>AllToys</Link></li>
         <li className="text-2xl"><Link to='/addToys'>AddToy</Link></li>
-        <li className="text-2xl"><Link to='/myToys'>MyToys</Link></li>
+        {user && <li className="text-2xl"><Link to='/myToys'>MyToys</Link></li>}
 
         {user
-            ? <button onClick={handleLogout} className="btn">Logout</button> : <li className="text-2xl"><Link to='/login'>login</Link></li>}
+            ? <button onClick={handleLogout} className="btn btn-outline">Logout</button> : <li className="text-2xl"><Link to='/login'>login</Link></li>}
     </>
     return (
         <div className="navbar bg-base-100">
@@ -41,7 +41,7 @@ const NavigationBar = () => {
             <div className="navbar-end">
                 <div className="avatar">
                     <div className="w-16 h-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src="https://i.ibb.co/4pJT6D2/profile-pic-1.png" />
+                        <img src={user && user.photoURL} />
                     </div>
                 </div>
             </div>

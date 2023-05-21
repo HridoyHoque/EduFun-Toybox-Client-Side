@@ -52,7 +52,7 @@ const MyToys = () => {
         <div className="max-w-3xl mx-auto mt-8 mb-4">
             <h2 className="text-2xl font-bold text-center mb-6">My Toys</h2>
             {myToys.length === 0 ? (
-                <p className="text-center">Add Toys to see details....</p>
+                <p className="text-center">Please Add Some Toys....</p>
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {myToys.map((toy) => (

@@ -45,6 +45,7 @@ const AddToys = () => {
     }
     return (
         <form onSubmit={handleAddToys}>
+             <h2 className="text-2xl font-bold text-center mb-6">Add Toys</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="form-control">
                 <label className="label">

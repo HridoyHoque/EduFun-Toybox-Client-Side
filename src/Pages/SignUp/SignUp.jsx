@@ -1,12 +1,17 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState(null)
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || '/'
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -15,9 +20,9 @@ const SignUp = () => {
         const password = form.password.value;
         const photo = form.photo.value;
          setError('')
-         if(password.length > 6){
-            setError("Your password must be at least six characters long")
-            return
+         if(password.length < 6){
+            return  setError("Your password must be at least six characters long")
+            
          }
         console.log(name, email, password, photo)
         createUser(email, password)
@@ -36,11 +41,25 @@ const SignUp = () => {
                     progress: undefined,
                     theme: "colored",
                     });
+                    updateUserData(result.user, name, photo);
+                    navigate(from, {replace: true})
             })
             .catch(() => {
                 setError("Please provide valid information to register account")
             })
     }
+
+    const updateUserData = (user, name, photo) => {
+        updateProfile(user,{
+          displayName: name, photoURL: photo
+        })
+        .then(() => {
+          console.log('user updated successfully')
+        })
+        .catch(error => {
+          console.log(error)
+        })
+      }
     return (
         <div className="hero min-h-screen bg-base-200 mb-5">
             <div className="hero-content flex-col lg:flex-row">

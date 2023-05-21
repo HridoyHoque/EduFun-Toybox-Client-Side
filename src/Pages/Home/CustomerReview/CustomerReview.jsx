@@ -3,7 +3,7 @@ const CustomerReview = () => {
     const reviews = [
         {
             id: 1,
-            name: "John Doe",
+            name: "Hridoy Hoque",
             photo: "https://i.ibb.co/fX8mtFG/profile-pic-3.png",
             review:
                 "Amazing toys! My kids love them. The quality is top-notch, and the educational value is excellent. Highly recommended!",
