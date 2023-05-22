@@ -3,21 +3,21 @@ const Footer = () => {
     return (
       <div className="mt-4">
         <footer className="footer p-10 bg-gray-200 text-base-content">
-  <div className="text-xl">
+  <div>
     <span className="footer-title">Services</span> 
     <a className="link link-hover">Branding</a> 
     <a className="link link-hover">Toys</a> 
     <a className="link link-hover">Marketing</a> 
     <a className="link link-hover">Advertisement</a>
   </div> 
-  <div className="text-xl">
+  <div>
     <span className="footer-title">Company</span> 
     <a className="link link-hover">About us</a> 
     <a className="link link-hover">Contact</a> 
     <a className="link link-hover">Products</a> 
     <a className="link link-hover">Press kit</a>
   </div> 
-  <div className="text-xl">
+  <div>
     <span className="footer-title">Legal</span> 
     <a className="link link-hover">Terms of use</a> 
     <a className="link link-hover">Privacy policy</a> 
