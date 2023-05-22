@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import AllToysRow from "./AllToysRow";
+import PageTitle from "../../PageTitle";
 
 const AllToys = () => {
     const allToys = useLoaderData()
@@ -28,6 +29,7 @@ const AllToys = () => {
        
                 </tbody>
             </table>
+            <PageTitle title="EduFun | All Toys"/>
         </div>
     );
 };

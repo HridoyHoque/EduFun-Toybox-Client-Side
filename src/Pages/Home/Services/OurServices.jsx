@@ -1,10 +1,15 @@
 import { CiDeliveryTruck } from "react-icons/ci";
 import { TiGift } from "react-icons/ti";
 import { BiDonateHeart, BiSupport } from "react-icons/bi";
-
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 
 
 const OurServices = () => {
+    useEffect(() => {
+        Aos.init({duration: 2000})
+    },[])
     const services = [
         {
           id: 1,
@@ -36,7 +41,7 @@ const OurServices = () => {
         },
       ];
     return (
-        <section className="bg-gray-100 py-12">
+        <section data-aos = "fade-right" className="bg-gray-100 py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

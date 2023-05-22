@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from "react-icons/fc";
 import './Login.css'
+import PageTitle from "../../PageTitle";
 
 const Login = () => {
 
@@ -109,6 +110,7 @@ const Login = () => {
                         </form>
                     </div>
                 </div>
+                <PageTitle title="EduFun | Login"/>
             </div>
             <ToastContainer
                 position="top-center"

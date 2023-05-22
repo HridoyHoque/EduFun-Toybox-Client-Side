@@ -1,5 +1,10 @@
-
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 const CustomerReview = () => {
+    useEffect(() => {
+        Aos.init({duration: 2000})
+    },[])
     const reviews = [
         {
             id: 1,
@@ -11,20 +16,20 @@ const CustomerReview = () => {
         {
             id: 2,
             name: "Jane Smith",
-            photo: "https://i.ibb.co/fX8mtFG/profile-pic-3.png",
+            photo: "https://i.ibb.co/3Tq6SDM/pexels-andrea-piacquadio-927022.jpg",
             review:
                 "I was impressed by the toys. The toys are not only fun but also help my children learn and develop important skills.",
         },
         {
             id: 3,
             name: "Mike Johnson",
-            photo: "https://i.ibb.co/fX8mtFG/profile-pic-3.png",
+            photo: "https://i.ibb.co/6bLhMkq/profile-pic-4.png",
             review:
                 "The customer service was exceptional. The team was helpful and provided great recommendations. A great shopping",
         },
     ];
     return (
-        <section className="bg-gradient-to-r from-sky-500 via-slate-400-500 to-slate-700 py-12">
+        <section data-aos = "fade-left" className="bg-gradient-to-r from-sky-500 via-slate-400-500 to-slate-700 py-12">
             <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-white mb-8">Client Reviews</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

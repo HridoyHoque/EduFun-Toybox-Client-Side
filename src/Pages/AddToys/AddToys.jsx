@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../Providers/AuthProvider';
+import PageTitle from '../../PageTitle';
 
 const AddToys = () => {
     const { user } = useContext(AuthContext)
@@ -45,6 +46,7 @@ const AddToys = () => {
     }
     return (
         <form onSubmit={handleAddToys}>
+            <PageTitle title="EduFun | Add Toys"/>
              <h2 className="text-2xl font-bold text-center mb-6">Add Toys</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="form-control">

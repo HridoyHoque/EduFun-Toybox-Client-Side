@@ -1,5 +1,11 @@
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 
 const GallerySection = () => {
+    useEffect(() => {
+        Aos.init({duration: 2000})
+    },[])
     const images = [
         { id: 1, src: 'https://i.ibb.co/D7LbHtv/toys.png', alt: 'Image 1' },
         { id: 2, src: 'https://i.ibb.co/D7LbHtv/toys.png', alt: 'Image 2' },
@@ -11,7 +17,7 @@ const GallerySection = () => {
     ];
 
     return (
-        <section className="py-10 bg-gray-100">
+        <section data-aos = "fade-gallery" className="py-10 bg-gray-100">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-3xl font-bold text-center mb-6">Gallery</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

@@ -4,6 +4,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
+import PageTitle from "../../PageTitle";
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
@@ -107,6 +108,7 @@ const SignUp = () => {
                         </form>
                     </div>
                 </div>
+                <PageTitle title="EduFun | SignUp"/> 
             </div>
             <ToastContainer
                 position="top-center"

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import MyToysCart from "./MyToysCart";
+import PageTitle from "../../PageTitle";
 
 const MyToys = () => {
     const [myToys, setMyToys] = useState([])
@@ -50,6 +51,7 @@ const MyToys = () => {
     }
     return (
         <div className="max-w-3xl mx-auto mt-8 mb-4">
+            <PageTitle title="EduFun | My Toy"/>
             <h2 className="text-2xl font-bold text-center mb-6">My Toys</h2>
             {myToys.length === 0 ? (
                 <p className="text-center">Please Add Some Toys....</p>

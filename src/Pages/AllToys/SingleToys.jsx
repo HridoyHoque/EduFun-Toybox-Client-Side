@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import PageTitle from "../../PageTitle";
 
 
 const SingleToys = () => {
@@ -14,6 +15,7 @@ const SingleToys = () => {
         <p className="text-gray-600">Price: ${toy.price}</p>
         <p className="text-gray-600">Available Quantity: {toy.quantity}</p>
         <p className="text-gray-600 mt-4">{toy.details}</p>
+        <PageTitle title="EduFun | Toy"/>
       </div>
     );
 };

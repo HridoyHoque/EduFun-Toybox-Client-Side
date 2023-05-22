@@ -1,3 +1,4 @@
+import PageTitle from "../../PageTitle";
 
 const Blog = () => {
     const blogData = [
@@ -33,6 +34,7 @@ const Blog = () => {
             </div>
           ))}
         </div>
+        <PageTitle title="EduFun | Blogs"/>
       </div>
     );
 };

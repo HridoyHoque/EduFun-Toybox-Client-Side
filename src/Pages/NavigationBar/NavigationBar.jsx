@@ -41,7 +41,7 @@ const NavigationBar = () => {
             <div className="navbar-end">
                 <div className="avatar">
                     <div className="w-16 h-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src={user && user.photoURL} />
+                        <img  title={user?.displayName} src={user && user.photoURL} />
                     </div>
                 </div>
             </div>
