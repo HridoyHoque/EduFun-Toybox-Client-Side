@@ -1,41 +1,74 @@
-{
-    "toys": [
-      {
+[
+    {
         "category": "Science",
         "picture": "https://example.com/toy1.jpg",
         "name": "Solar System Model",
-        "rating": 4.5
-      },
-      {
+        "rating": 4.5,
+        "price" : 600
+        
+    },
+    {
         "category": "Science",
-        "picture": "https://example.com/toy2.jpg",
-        "name": "Microscope Kit",
-        "rating": 4.2
-      },
-      {
-        "category": "Building",
-        "picture": "https://example.com/toy3.jpg",
-        "name": "LEGO Mindstorms EV3",
-        "rating": 4.8
-      },
-      {
-        "category": "Building",
-        "picture": "https://example.com/toy4.jpg",
-        "name": "Magnetic Building Blocks",
-        "rating": 4.3
-      },
-      {
+        "picture": "https://example.com/toy1.jpg",
+        "name": "Solar System Model",
+        "rating": 4.5,
+        "price" : 600
+        
+    },
+    {
+        "category": "Science",
+        "picture": "https://example.com/toy1.jpg",
+        "name": "Solar System Model",
+        "rating": 4.5,
+        "price" : 600
+        
+    },
+    {
+        "category": "Education",
+        "picture": "https://example.com/toy1.jpg",
+        "name": "Education Toys",
+        "rating": 4.5,
+        "price" : 600
+        
+    },
+    {
+        "category": "Education",
+        "picture": "https://example.com/toy1.jpg",
+        "name": "Education Toys",
+        "rating": 4.5,
+        "price" : 600
+        
+    },
+    {
+        "category": "Education",
+        "picture": "https://example.com/toy1.jpg",
+        "name": "Education Toys",
+        "rating": 4.5,
+        "price" : 600
+        
+    },
+    {
         "category": "Language",
-        "picture": "https://example.com/toy5.jpg",
-        "name": "Alphabet Puzzle",
-        "rating": 4.6
-      },
-      {
+        "picture": "https://example.com/toy1.jpg",
+        "name": "Language Toy",
+        "rating": 4.5,
+        "price" : 600
+        
+    },
+    {
         "category": "Language",
-        "picture": "https://example.com/toy6.jpg",
-        "name": "Storytelling Cards",
-        "rating": 4.4
-      }
-    ]
-  }
-  
+        "picture": "https://example.com/toy1.jpg",
+        "name": "Language Toy",
+        "rating": 4.5,
+        "price" : 600
+        
+    },
+    {
+        "category": "Language",
+        "picture": "https://example.com/toy1.jpg",
+        "name": "Language Toy",
+        "rating": 4.5,
+        "price" : 600
+        
+    }
+]
