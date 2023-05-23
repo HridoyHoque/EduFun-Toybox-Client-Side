@@ -65,7 +65,7 @@ const AddToys = () => {
                 <label className="label">
                     <span className="label-text">Email</span>
                 </label>
-                <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
+                <input type="email" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">
@@ -77,7 +77,7 @@ const AddToys = () => {
                 <label className="label">
                     <span className="label-text">price</span>
                 </label>
-                <input type="text" name='price' placeholder='Price' className="input input-bordered" />
+                <input type="number" name='price' placeholder='Price' className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">
@@ -89,13 +89,13 @@ const AddToys = () => {
                 <label className="label">
                     <span className="label-text">Ratings</span>
                 </label>
-                <input type="text" name='rating' placeholder='Ratings' className="input input-bordered" />
+                <input type="number" name='rating' placeholder='Ratings' className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">
                     <span className="label-text">Available Quantity</span>
                 </label>
-                <input type="text" name='quantity' placeholder='Available Quantity' className="input input-bordered" />
+                <input type="number" name='quantity' placeholder='Available Quantity' className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">

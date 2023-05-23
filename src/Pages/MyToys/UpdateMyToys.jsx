@@ -62,14 +62,14 @@ const UpdateMyToys = () => {
                         <label className="label">
                             <span className="label-text">price</span>
                         </label>
-                        <input type="text" name='price' placeholder='Price' defaultValue={price} className="input input-bordered" />
+                        <input type="number" name='price' placeholder='Price' defaultValue={price} className="input input-bordered" />
                     </div>
                     
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Available Quantity</span>
                         </label>
-                        <input type="text" name='quantity' placeholder='Available Quantity' defaultValue={quantity} className="input input-bordered" />
+                        <input type="number" name='quantity' placeholder='Available Quantity' defaultValue={quantity} className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">

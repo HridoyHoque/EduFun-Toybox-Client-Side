@@ -1,13 +1,21 @@
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import AllToysRow from "./AllToysRow";
 import PageTitle from "../../PageTitle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AllToys = () => {
     
-    const LoadedToys = useLoaderData()
-    const [allToys, setAllToys] = useState(LoadedToys)
+    // const LoadedToys = useLoaderData()
     const [searchText, setSearchText] = useState("")
+    const [allToys, setAllToys] = useState(null)
+
+    useEffect(() => {
+        fetch("http://localhost:5000/toys")
+        .then(res => res.json())
+        .then(data => {
+            setAllToys(data)
+        })
+    },[])
     const handleSearch = () => {
         fetch(`http://localhost:5000/toySearchByName/${searchText}`)
         .then(res => res.json())
@@ -15,6 +23,7 @@ const AllToys = () => {
             setAllToys(data)
         })
     }
+    console.log(allToys)
 
     return (
         <div>
@@ -44,7 +53,7 @@ const AllToys = () => {
                 </thead>
                 <tbody>
                    {
-                    allToys.map(toys => <AllToysRow
+                    allToys?.map(toys => <AllToysRow
                     key={toys._id}
                     toys={toys}
                     ></AllToysRow>)
