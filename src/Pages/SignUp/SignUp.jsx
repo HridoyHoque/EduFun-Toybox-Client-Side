@@ -20,11 +20,11 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photo = form.photo.value;
-         setError('')
-         if(password.length < 6){
-            return  setError("Your password must be at least six characters long")
-            
-         }
+        setError('')
+        if (password.length < 6) {
+            return setError("Your password must be at least six characters long")
+
+        }
         console.log(name, email, password, photo)
         createUser(email, password)
             .then(result => {
@@ -41,9 +41,9 @@ const SignUp = () => {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    });
-                    updateUserData(result.user, name, photo);
-                    navigate(from, {replace: true})
+                });
+                updateUserData(result.user, name, photo);
+                navigate(from, { replace: true })
             })
             .catch(() => {
                 setError("Please provide valid information to register account")
@@ -51,16 +51,16 @@ const SignUp = () => {
     }
 
     const updateUserData = (user, name, photo) => {
-        updateProfile(user,{
-          displayName: name, photoURL: photo
+        updateProfile(user, {
+            displayName: name, photoURL: photo
         })
-        .then(() => {
-          console.log('user updated successfully')
-        })
-        .catch(error => {
-          console.log(error)
-        })
-      }
+            .then(() => {
+                console.log('user updated successfully')
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
     return (
         <div className="hero min-h-screen bg-base-200 mb-5">
             <div className="hero-content flex-col lg:flex-row">
@@ -80,19 +80,19 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" name="name" placeholder="Your Name" className="input input-bordered" required/>
+                                <input type="text" name="name" placeholder="Your Name" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" name="email" placeholder="email" className="input input-bordered" required/>
+                                <input type="text" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required/>
+                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -108,7 +108,7 @@ const SignUp = () => {
                         </form>
                     </div>
                 </div>
-                <PageTitle title="EduFun | SignUp"/> 
+                <PageTitle title="EduFun | SignUp" />
             </div>
             <ToastContainer
                 position="top-center"

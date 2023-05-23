@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             {
                 path: '/singleToyCategory/:id',
                 element: <SingleToyCategoryCart></SingleToyCategoryCart>,
-                loader: ({params}) => fetch(`http://localhost:5000/singleToyCategory/${params.id}`)
+                loader: ({params}) => fetch(`https://edu-fun-toybox-server.vercel.app/singleToyCategory/${params.id}`)
             },
             {
                 path: "/blog",
@@ -46,12 +46,12 @@ const router = createBrowserRouter([
             {
                 path: '/allToys',
                 element: <AllToys></AllToys>,
-                // loader: () => fetch("http://localhost:5000/toys")
+                // loader: () => fetch("https://edu-fun-toybox-server.vercel.app/toys")
             },
             {
                 path: '/allToys/:id',
                 element: <PrivateRoute><SingleToys></SingleToys></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://edu-fun-toybox-server.vercel.app/toys/${params.id}`)
             },
             {
                 path: '/myToys',
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
             {
                 path: '/myToys/:id',
                 element: <UpdateMyToys></UpdateMyToys>,
-                loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://edu-fun-toybox-server.vercel.app/toys/${params.id}`)
             }
         ]
     },

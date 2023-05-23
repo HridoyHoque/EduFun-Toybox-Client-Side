@@ -3,8 +3,8 @@ import 'aos/dist/aos.css'
 import { useEffect } from 'react';
 const CustomerReview = () => {
     useEffect(() => {
-        Aos.init({duration: 2000})
-    },[])
+        Aos.init({ duration: 2000 })
+    }, [])
     const reviews = [
         {
             id: 1,
@@ -29,7 +29,7 @@ const CustomerReview = () => {
         },
     ];
     return (
-        <section data-aos = "fade-up" className="overflow-x-hidden overflow-y-hidden bg-gradient-to-r from-sky-500 via-slate-400-500 to-slate-700 py-12">
+        <section data-aos="fade-up" className="overflow-x-hidden overflow-y-hidden bg-gradient-to-r from-sky-500 via-slate-400-500 to-slate-700 py-12">
             <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-white mb-8">Client Reviews</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

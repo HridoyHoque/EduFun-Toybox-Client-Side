@@ -1,5 +1,4 @@
 import PageTitle from "../../../PageTitle";
-// import Banner from "../Banner/Banner";
 import CustomerReview from "../CustomerReview/CustomerReview";
 import GallerySection from "../GallarySection/GallerySection";
 import HomeBanner from "../HomeBanner/HomeBanner";
@@ -9,8 +8,7 @@ import ToyCategory from "../ToyCategory/ToyCategory";
 const Home = () => {
     return (
         <>
-        <PageTitle title="EduFun | Home Page"/>
-            {/* <Banner></Banner> */}
+            <PageTitle title="EduFun | Home Page" />
             <HomeBanner></HomeBanner>
             <GallerySection></GallerySection>
             <ToyCategory></ToyCategory>

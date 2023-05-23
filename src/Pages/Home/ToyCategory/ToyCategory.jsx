@@ -10,7 +10,7 @@ const ToyCategory = () => {
   const [activeTab, setActiveTab] = useState("Science")
 
   useEffect(() => {
-    fetch(`http://localhost:5000/category/${activeTab}`)
+    fetch(`https://edu-fun-toybox-server.vercel.app/category/${activeTab}`)
       .then(res => res.json())
       .then(data => {
         // console.log(data)

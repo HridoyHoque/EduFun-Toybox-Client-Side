@@ -23,7 +23,7 @@ const AddToys = () => {
         const newToy = { name, photo, category, price, rating, quantity, details, sellerName, email }
 
         // send data to the server
-        fetch("http://localhost:5000/toys", {
+        fetch("https://edu-fun-toybox-server.vercel.app/toys", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -46,68 +46,68 @@ const AddToys = () => {
     }
     return (
         <form onSubmit={handleAddToys}>
-            <PageTitle title="EduFun | Add Toys"/>
-             <h2 className="text-2xl font-bold text-center mb-6">Add Toys</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Seller Name</span>
-                </label>
-                <input type="text" required defaultValue={user?.displayName} name="sellerName" className="input input-bordered" />
+            <PageTitle title="EduFun | Add Toys" />
+            <h2 className="text-2xl font-bold text-center mb-6">Add Toys</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Seller Name</span>
+                    </label>
+                    <input type="text" required defaultValue={user?.displayName} name="sellerName" className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">photo URL</span>
+                    </label>
+                    <input type="text" required name="photo" placeholder='Toy Photo' className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Email</span>
+                    </label>
+                    <input type="email" required name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Toy Name</span>
+                    </label>
+                    <input type="text" name='name' required placeholder='Toy Name' className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">price</span>
+                    </label>
+                    <input type="number" name='price' required placeholder='Price' className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">category</span>
+                    </label>
+                    <input type="text" name='category' required placeholder='Toy Category' className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Ratings</span>
+                    </label>
+                    <input type="number" name='rating' required placeholder='Ratings' className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Available Quantity</span>
+                    </label>
+                    <input type="number" name='quantity' required placeholder='Available Quantity' className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Details</span>
+                    </label>
+                    <input type="text" name='details' required placeholder='Toy Details' className="input input-bordered" />
+                </div>
             </div>
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">photo URL</span>
-                </label>
-                <input type="text" required name="photo" placeholder='Toy Photo' className="input input-bordered" />
+            <div className="form-control mt-6">
+                <input className="btn btn-primary btn-block" type="submit" value="Add Toy" />
             </div>
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Email</span>
-                </label>
-                <input type="email" required name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
-            </div>
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Toy Name</span>
-                </label>
-                <input type="text" name='name' required placeholder='Toy Name' className="input input-bordered" />
-            </div>
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">price</span>
-                </label>
-                <input type="number" name='price' required placeholder='Price' className="input input-bordered" />
-            </div>
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">category</span>
-                </label>
-                <input type="text" name='category' required placeholder='Toy Category' className="input input-bordered" />
-            </div>
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Ratings</span>
-                </label>
-                <input type="number" name='rating' required placeholder='Ratings' className="input input-bordered" />
-            </div>
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Available Quantity</span>
-                </label>
-                <input type="number" name='quantity' required placeholder='Available Quantity' className="input input-bordered" />
-            </div>
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Details</span>
-                </label>
-                <input type="text" name='details' required placeholder='Toy Details' className="input input-bordered" />
-            </div>
-        </div>
-        <div className="form-control mt-6">
-            <input className="btn btn-primary btn-block" type="submit" value="Add Toy" />
-        </div>
-    </form>
+        </form>
     );
 };
 

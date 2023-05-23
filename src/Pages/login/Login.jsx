@@ -23,7 +23,8 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        // console.log(email, password);
+       
+        // Email password Login system
         loginUser(email, password)
             .then(result => {
                 const user = result.user;
@@ -48,9 +49,11 @@ const Login = () => {
             })
     }
 
+    // Google Login system
     const handleGoogleLogin = () => {
         googleLogin()
         .then(result => {
+            setError('')
             const user = result.user;
             console.log(user);
             toast.success('Success! You have been logged in by Google.', {
@@ -63,8 +66,7 @@ const Login = () => {
                 progress: undefined,
                 theme: "colored",
             });
-            setError('')
-            navigate('/')
+            navigate(from, {replace: true});
         })
         .catch(error => {
             console.log(error);
