@@ -110,7 +110,7 @@ const Login = () => {
                         </form>
                     </div>
                 </div>
-                <PageTitle title="EduFun | Login"/>
+                <PageTitle title="EduFun | login"/>
             </div>
             <ToastContainer
                 position="top-center"

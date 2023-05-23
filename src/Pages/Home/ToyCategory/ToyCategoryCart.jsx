@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const ToyCategoryCart = ({categoryToy}) => {
-    const {picture, name, rating, price} = categoryToy;
+    const {_id, picture, name, rating, price} = categoryToy;
     return (
         <div>
              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
@@ -18,9 +19,9 @@ const ToyCategoryCart = ({categoryToy}) => {
                     </svg>
                     <p className="text-gray-500 text-sm">{rating}</p>
                 </div>
-                <button className="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg focus:outline-none">
+                <Link to={`/singleToyCategory/${_id}`}><button className="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg focus:outline-none">
                     View Details
-                </button>
+                </button></Link>
             </div>
         </div>
         </div>

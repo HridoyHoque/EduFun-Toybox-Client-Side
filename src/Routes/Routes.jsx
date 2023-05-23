@@ -11,6 +11,7 @@ import MyToys from "../Pages/MyToys/MyToys";
 import PrivateRoute from "./PrivateRoute";
 import UpdateMyToys from "../Pages/MyToys/UpdateMyToys";
 import SingleToys from "../Pages/AllToys/SingleToys";
+import SingleToyCategoryCart from "../Pages/Home/ToyCategory/SingleToyCategoryCart";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/singleToyCategory/:id',
+                element: <SingleToyCategoryCart></SingleToyCategoryCart>,
+                loader: ({params}) => fetch(`http://localhost:5000/singleToyCategory/${params.id}`)
             },
             {
                 path: "/blog",
@@ -45,7 +51,7 @@ const router = createBrowserRouter([
             {
                 path: '/allToys/:id',
                 element: <PrivateRoute><SingleToys></SingleToys></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
             },
             {
                 path: '/myToys',
@@ -54,7 +60,7 @@ const router = createBrowserRouter([
             {
                 path: '/myToys/:id',
                 element: <UpdateMyToys></UpdateMyToys>,
-                loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
             }
         ]
     },

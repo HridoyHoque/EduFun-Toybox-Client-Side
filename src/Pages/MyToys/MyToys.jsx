@@ -20,28 +20,28 @@ const MyToys = () => {
     }, [url])
     useEffect(() => {
         fetch(`http://localhost:5000/toys?sort=${sortBy}`)
-          .then(res => res.json())
-          .then(data => {
-            setMyToys(data);
-          });
-      }, [sortBy]);
+            .then(res => res.json())
+            .then(data => {
+                setMyToys(data);
+            });
+    }, [sortBy]);
 
     const handleSortChange = (e) => {
         setSortBy(e.target.value);
     };
     const renderSortSelect = () => (
         <div className="flex items-center">
-          <span className="mr-2 text-2xl text-gray-600">Sort by price:</span>
-          <select
-            value={sortBy}
-            onChange={handleSortChange}
-            className="px-4 py-2 rounded bg-gray-200 text-gray-800"
-          >
-            <option value="ascending">Ascending</option>
-            <option value="descending">Descending</option>
-          </select>
+            <span className="mr-2 text-2xl text-gray-600">Sort by price:</span>
+            <select
+                value={sortBy}
+                onChange={handleSortChange}
+                className="px-4 py-2 rounded bg-gray-200 text-gray-800"
+            >
+                <option value="ascending">Ascending</option>
+                <option value="descending">Descending</option>
+            </select>
         </div>
-      );
+    );
 
     const handleDeleteToy = _id => {
         Swal.fire({
