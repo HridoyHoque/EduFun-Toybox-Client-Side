@@ -8,6 +8,6 @@
 
 
 
-* if sometimes any section don't show data then please wait a few seconds for loading the data, it may occur sometimes for vercel issues.
+* Sometimes Shop by category data will take some time to fetch for vercel issues.
 
 Live Link: https://edufun-toybox-client.web.app
