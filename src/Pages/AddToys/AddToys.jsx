@@ -53,55 +53,55 @@ const AddToys = () => {
                 <label className="label">
                     <span className="label-text">Seller Name</span>
                 </label>
-                <input type="text" defaultValue={user?.displayName} name="sellerName" className="input input-bordered" />
+                <input type="text" required defaultValue={user?.displayName} name="sellerName" className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">
                     <span className="label-text">photo URL</span>
                 </label>
-                <input type="text" name="photo" placeholder='Toy Photo' className="input input-bordered" />
+                <input type="text" required name="photo" placeholder='Toy Photo' className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">
                     <span className="label-text">Email</span>
                 </label>
-                <input type="email" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
+                <input type="email" required name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">
                     <span className="label-text">Toy Name</span>
                 </label>
-                <input type="text" name='name' placeholder='Toy Name' className="input input-bordered" />
+                <input type="text" name='name' required placeholder='Toy Name' className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">
                     <span className="label-text">price</span>
                 </label>
-                <input type="number" name='price' placeholder='Price' className="input input-bordered" />
+                <input type="number" name='price' required placeholder='Price' className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">
                     <span className="label-text">category</span>
                 </label>
-                <input type="text" name='category' placeholder='Toy Category' className="input input-bordered" />
+                <input type="text" name='category' required placeholder='Toy Category' className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">
                     <span className="label-text">Ratings</span>
                 </label>
-                <input type="number" name='rating' placeholder='Ratings' className="input input-bordered" />
+                <input type="number" name='rating' required placeholder='Ratings' className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">
                     <span className="label-text">Available Quantity</span>
                 </label>
-                <input type="number" name='quantity' placeholder='Available Quantity' className="input input-bordered" />
+                <input type="number" name='quantity' required placeholder='Available Quantity' className="input input-bordered" />
             </div>
             <div className="form-control">
                 <label className="label">
                     <span className="label-text">Details</span>
                 </label>
-                <input type="text" name='details' placeholder='Toy Details' className="input input-bordered" />
+                <input type="text" name='details' required placeholder='Toy Details' className="input input-bordered" />
             </div>
         </div>
         <div className="form-control mt-6">
