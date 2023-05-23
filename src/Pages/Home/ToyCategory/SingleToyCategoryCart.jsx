@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
+import PageTitle from "../../../PageTitle";
 
 const SingleToyCategoryCart = () => {
     const toy = useLoaderData()
@@ -17,6 +18,7 @@ const SingleToyCategoryCart = () => {
                     <div className="flex"><p className="text-lg mr-2">Rating: {toy.rating}</p> <span className="mt-1"><AiFillStar /></span></div>
                 </div>
             </div>
+            <PageTitle title="EduFun | category Toy"/>
         </div>
     );
 };

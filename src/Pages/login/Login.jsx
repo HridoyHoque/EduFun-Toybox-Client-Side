@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,7 +10,7 @@ import PageTitle from "../../PageTitle";
 const Login = () => {
 
     const { loginUser, googleLogin } = useContext(AuthContext);
-    const [error, setError] = useState(null)
+    // const [error, setError] = useState(null)
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -23,14 +23,14 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-       
+        // setError(" ")
         // Email password Login system
         loginUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 form.reset()
-                setError('')
+                // setError('')
                 toast.success('Success! You have been logged in.', {
                     position: "top-right",
                     autoClose: 5000,
@@ -44,16 +44,17 @@ const Login = () => {
                 navigate(from, {replace: true})
 
             })
-            .catch(() => {
-                setError("please provide valid email and password")
+            .catch((error) => {
+               console.log(error)
             })
     }
 
     // Google Login system
     const handleGoogleLogin = () => {
+        // setError('')
         googleLogin()
         .then(result => {
-            setError('')
+            // setError('')
             const user = result.user;
             console.log(user);
             toast.success('Success! You have been logged in by Google.', {
@@ -103,7 +104,7 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                                 <p className='text-center mt-2 mb-5'>New to EduFun? <Link to='/signup' className='text-info font-bold'>Sign Up</Link></p>
                                 <div className="divider">Sign In With Google</div>
-                                <p className="text-rose-600">{error}</p>
+                                {/* <p className="text-rose-600">{error}</p> */}
                                     <div className="text-center">
                                         <button onClick={handleGoogleLogin}><FcGoogle className="googleIcon"/></button>
                                     </div>

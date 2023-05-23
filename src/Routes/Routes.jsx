@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/singleToyCategory/:id',
-                element: <SingleToyCategoryCart></SingleToyCategoryCart>,
+                element: <PrivateRoute><SingleToyCategoryCart></SingleToyCategoryCart></PrivateRoute>,
                 loader: ({params}) => fetch(`https://edu-fun-toybox-server.vercel.app/singleToyCategory/${params.id}`)
             },
             {

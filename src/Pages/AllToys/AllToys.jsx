@@ -29,10 +29,10 @@ const AllToys = () => {
         <div>
             <div>
                 <h1 className="text-2xl mr-10 text-center mb-3">All Toys List</h1>
-                <div className="search-box p-2 text-center">
+            <div className="search-box p-2 text-center">
                     <input
                         onChange={(e) => setSearchText(e.target.value)}
-                        placeholder="Search Toys"
+                        placeholder="Search Toys by Name"
                         className="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                         type="text" /> {" "}
                     <button onClick={handleSearch} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow">Search</button>
