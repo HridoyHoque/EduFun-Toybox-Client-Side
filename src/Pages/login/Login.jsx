@@ -4,12 +4,14 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from "react-icons/fc";
+import { ImSpinner6 } from 'react-icons/im';
 import './Login.css'
 import PageTitle from "../../PageTitle";
+import { useMediaQuery } from "react-responsive";
 
 const Login = () => {
-
-    const { loginUser, googleLogin } = useContext(AuthContext);
+    const isSmallDevice = useMediaQuery({ maxWidth: 767 });
+    const { loginUser, googleLogin, setLoading, loading} = useContext(AuthContext);
     // const [error, setError] = useState(null)
     const navigate = useNavigate()
     const location = useLocation()
@@ -46,6 +48,7 @@ const Login = () => {
             })
             .catch((error) => {
                console.log(error)
+               setLoading(false)
             })
     }
 
@@ -76,7 +79,7 @@ const Login = () => {
     return (
         <div className="hero min-h-screen bg-base-200 mb-5">
             <div className="hero-content flex-col lg:flex-row">
-                <div className="w-1/2 mr-20">
+            <div className={`w-1/2 mr-20 ${isSmallDevice ? 'hidden' : 'block md:block'}`}>
                     <div className="mockup-phone">
                         <div className="camera"></div>
                         <div className="display">
@@ -92,25 +95,26 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" name="email" placeholder="email" className="input input-bordered"  />
+                                <input type="text" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" name="password" placeholder="password" className="input input-bordered"  />
+                                <input type="text" name="password" placeholder="password" className="input input-bordered" required />
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary">{loading ? <ImSpinner6 className="animate-spin" size={24}/> : "Login"}</button>
                                 <p className='text-center mt-2 mb-5'>New to EduFun? <Link to='/signup' className='text-info font-bold'>Sign Up</Link></p>
                                 <div className="divider">Sign In With Google</div>
                                 {/* <p className="text-rose-600">{error}</p> */}
-                                    <div className="text-center">
-                                        <button onClick={handleGoogleLogin}><FcGoogle className="googleIcon"/></button>
-                                    </div>
+                                    
 
                             </div>
                         </form>
+                        <div className="text-center">
+                                        <button onClick={handleGoogleLogin}><FcGoogle size={34} className="googleIcon"/></button>
+                                    </div>
                     </div>
                 </div>
                 <PageTitle title="EduFun | login"/>

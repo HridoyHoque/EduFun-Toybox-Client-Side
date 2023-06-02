@@ -5,8 +5,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
 import PageTitle from "../../PageTitle";
+import { useMediaQuery } from "react-responsive";
 
 const SignUp = () => {
+    const isSmallDevice = useMediaQuery({ maxWidth: 767 });
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState(null)
     const navigate = useNavigate()
@@ -61,10 +63,12 @@ const SignUp = () => {
                 console.log(error)
             })
     }
+    
     return (
         <div className="hero min-h-screen bg-base-200 mb-5">
             <div className="hero-content flex-col lg:flex-row">
-                <div className="w-1/2 mr-20">
+                {/* <div className={isSmallDevice? "hidden" : ""}> */}
+                <div className={`w-1/2 mr-20 ${isSmallDevice ? 'hidden' : 'block md:block'}`}>
                     <div className="mockup-phone">
                         <div className="camera"></div>
                         <div className="display">
@@ -72,6 +76,7 @@ const SignUp = () => {
                         </div>
                     </div>
                 </div>
+                {/* </div> */}
                 <div className="w-1/2 max-w-sm card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <h1 className="text-3xl text-center font-bold">SignUp</h1>

@@ -15,6 +15,7 @@ const ToyCategory = () => {
       .then(data => {
         // console.log(data)
         setCategoryToys(data)
+        // console.log(data)
       })
   }, [activeTab])
   const handleTabScience = (TabName) => {
@@ -31,13 +32,16 @@ const ToyCategory = () => {
           <Tab onClick={() => handleTabScience("Education")}>Education</Tab>
           <Tab onClick={() => handleTabScience("Language")}>Language</Tab>
         </TabList>
-        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
-          {categoryToys?.map(categoryToy => (
-            <ToyCategoryCart
-              key={categoryToy._id}
-              categoryToy={categoryToy}
-            ></ToyCategoryCart>))}
-        </div>
+        {
+          categoryToys.length < 1 ? <progress className="progress w-56"></progress> : <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+            {categoryToys?.map(categoryToy => (
+              <ToyCategoryCart
+                key={categoryToy._id}
+                categoryToy={categoryToy}
+              ></ToyCategoryCart>))}
+          </div>
+        }
+
         <TabPanel>
         </TabPanel>
         <TabPanel>
